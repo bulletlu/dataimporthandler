@@ -20,41 +20,38 @@
     under the License.
   -->
   <modelVersion>4.0.0</modelVersion>
+  <!--
   <parent>
     <groupId>org.apache.solr</groupId>
     <artifactId>solr-parent</artifactId>
     <version>4.1-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
+  -->
   <groupId>org.apache.solr</groupId>
   <artifactId>solr-dataimporthandler</artifactId>
   <packaging>jar</packaging>
+  <version>4.1-SNAPSHOT</version>
   <name>Apache Solr DataImportHandler</name>
   <description>Apache Solr DataImportHandler</description>
   <properties>
     <module-directory>solr/contrib/dataimporthandler</module-directory>
-    <top-level>../../../..</top-level>
+    <!--<top-level>../../../..</top-level>-->
+	<top-level>./</top-level>
     <module-path>${top-level}/${module-directory}</module-path>
     <surefire-solr-directory>${top-level}/../../solr</surefire-solr-directory>
   </properties>
 
-  <scm>
-    <connection>scm:svn:${vc-anonymous-base-url}/${module-directory}</connection>
-    <developerConnection>scm:svn:${vc-dev-base-url}/${module-directory}</developerConnection>
-    <url>${vc-browse-base-url}/${module-directory}</url>
-  </scm>
-
 
   <dependencies>
+<!--
     <dependency>
-      <!-- lucene-test-framework dependency must be declared before lucene-core -->
-      <!-- This dependency cannot be put into solr-parent, because local        -->
-      <!-- dependencies are always ordered before inherited dependencies.       -->
       <groupId>org.apache.lucene</groupId>
       <artifactId>lucene-test-framework</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
+-->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>solr-core</artifactId>
@@ -69,16 +66,19 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
+	  <version>3.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
+	  <version>1.8.0.10</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.derby</groupId>
       <artifactId>derby</artifactId>
+	  <version>10.9.1.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
